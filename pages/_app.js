@@ -6,9 +6,6 @@ function App({Component, pageProps}) {
     <Layout>
         <Component {...pageProps}/>
         <style jsx global>{`
-                nav {
-                    background-color: dimgray;
-                }
                 a {
                     text-decoration: none;
                     color: black;
