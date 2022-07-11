@@ -1,10 +1,9 @@
-import Navbar from '../components/Navbar';
+import Layout from '../components/layout';
 import '../styles/globals.css';
 
 function App({Component, pageProps}) {
     return (
-    <>
-        <Navbar />
+    <Layout>
         <Component {...pageProps}/>
         <style jsx global>{`
                 nav {
@@ -19,7 +18,7 @@ function App({Component, pageProps}) {
                 }
 
             `}</style>
-    </>
+    </Layout>
 );
 }
 
