@@ -7,13 +7,7 @@ function Home(){
     const [movies, setMovies] = useState();
     const router = useRouter();
     const onClick = (id, title) => {
-        router.push({
-            pathname: `/movies/${id}`,
-            query: {
-                title
-            }
-        }, 
-        `/movies/${id}`);
+        router.push(`/movies/${title}/${id}`);
     }
 
     useEffect(() => {
@@ -30,7 +24,7 @@ function Home(){
             <div onClick={()=>onClick(movie.id, movie.original_title)} className="movie" key={movie.id}>
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
                 <h4>
-                    <Link href={`/movies/${movie.id}`} key={movie.id}>
+                    <Link href={`/movies/${movie.original_title}/${movie.id}`} key={movie.id}>
                     <a>
                         {movie.original_title}
                     </a>
